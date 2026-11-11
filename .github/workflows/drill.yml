@@ -1,0 +1,16 @@
+name: drill
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  stuck-build-simulation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Simulate stuck build (sleep 10 minutes)
+        run: |
+          echo "Starting stuck-build simulation at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          echo "This step will run for at least 10 minutes to mimic a wedge overnight."
+          sleep 600
+          echo "Simulation complete at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
